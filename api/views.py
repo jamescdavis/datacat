@@ -4,7 +4,9 @@ from django.shortcuts import render
 
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
-from api.serializers import UserSerializer, GroupSerializer
+from api.serializers import UserSerializer, GroupSerializer, \
+    DatasetSerializer, PublicationSerializer, DatasetPublicationSerializer
+from api.models import Dataset, Publication, DatasetPublication
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -21,3 +23,18 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
+
+class DatasetViewSet(viewsets.ModelViewSet):
+    queryset = Dataset.objects.all()
+    serializer_class = DatasetSerializer
+
+
+class PublicationViewSet(viewsets.ModelViewSet):
+    queryset = Publication.objects.all()
+    serializer_class = PublicationSerializer
+
+
+class DatasetPublicationViewSet(viewsets.ModelViewSet):
+    queryset = DatasetPublication.objects.all()
+    serializer_class = DatasetPublicationSerializer
