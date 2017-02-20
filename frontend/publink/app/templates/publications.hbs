@@ -1,0 +1,10 @@
+<h2>Publications</h2>
+
+{{#each model as |publication|}}
+    <article class="listing">
+        <h3>{{publication.title}}</h3>
+        <div class="detail url">
+            <span>DOI:</span> {{publication.doi}}
+        </div>
+    </article>
+{{/each}}

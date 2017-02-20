@@ -1,0 +1,10 @@
+<h2>Datasets</h2>
+
+{{#each model as |dataset|}}
+    <article class="listing">
+        <h3>{{dataset.title}}</h3>
+        <div class="detail url">
+            <span>URL:</span> {{dataset.url}}
+        </div>
+    </article>
+{{/each}}

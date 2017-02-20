@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="menu">
+    {{#link-to 'index'}}
+      <h1 class="left">
+        <em>PubLink</em>
+      </h1>
+    {{/link-to}}
+    <div class="left links">
+      {{#link-to 'datasets'}}
+        Datasets
+      {{/link-to}}
+      {{#link-to 'publications'}}
+        Publications
+      {{/link-to}}
+    </div>
+  </div>
+  <div class="body">
+    {{outlet}}
+  </div>
+</div>
