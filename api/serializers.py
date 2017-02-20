@@ -16,7 +16,7 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 class DatasetPublicationSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = DatasetPublication
-        fields = ('id', 'publication', 'link_time')
+        fields = ('id', 'dataset', 'publication', 'link_time')
 
 class DatasetSerializer(serializers.HyperlinkedModelSerializer):
     datasetpublication_set = DatasetPublicationSerializer(many=True, read_only=True)
@@ -25,13 +25,8 @@ class DatasetSerializer(serializers.HyperlinkedModelSerializer):
         model = Dataset
         fields = ('id', 'url', 'title', 'publications', 'datasetpublication_set')
 
-class PublicationDatasetSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = DatasetPublication
-        fields = ('id', 'dataset', 'link_time')
-
 class PublicationSerializer(serializers.HyperlinkedModelSerializer):
-    datasetpublication_set = PublicationDatasetSerializer(many=True, read_only=True)
+    datasetpublication_set = DatasetPublicationSerializer(many=True, read_only=True)
 
     class Meta:
         model = Publication
