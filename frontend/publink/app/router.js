@@ -9,6 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('datasets');
   this.route('publications');
+  this.route('dataset-publications');
 });
 
 export default Router;

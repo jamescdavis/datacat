@@ -1,0 +1,12 @@
+<h2>Dataset Publications Links</h2>
+
+{{#each model as |datapub|}}
+    <article class="listing">
+        <div class="detail url">
+            <span>Dataset:</span> {{datapub.dataset.title}}
+        </div>
+        <div class="detail url">
+            <span>Publication:</span> {{datapub.publication.title}}
+        </div>
+    </article>
+{{/each}}
